@@ -1,0 +1,8 @@
+# TinyML Wildfire — training/quantization/simulation stack (laptop, CPU is fine)
+tensorflow==2.21.0        # Keras 3 + TFLite converter (int8 PTQ for TFLM)
+numpy>=1.26
+pyyaml>=6.0
+scikit-learn>=1.4         # PR-AUC, recall@FPR
+pillow>=10.0              # image IO / resize for real datasets
+tqdm>=4.66
+matplotlib>=3.8           # paper figures (matrix heatmaps, PR curves)

@@ -1,0 +1,25 @@
+# Ablation cell: temporal @ 64 KB, 96x96  (auto-generated)
+name: b64_temporal
+mechanism: temporal
+budget_kb: 64
+input_size: 96
+temporal_frames: 3
+
+train_region: arizona_pine          # in-region split (§9)
+cross_regions: [boreal, socal_chaparral]   # AZ->boreal, AZ->SoCal robustness tests
+
+seeds: [0, 1, 2]                     # >=3 seeds; report mean +/- std (§8)
+epochs: 12
+batch_size: 64
+lr: 0.001
+target_fpr: 0.01                     # recall @ fixed low FPR (early detection)
+
+# energy model (§8) — all outputs are labeled estimates
+duty_cycle: 0.01
+decisions_per_hour: 3600
+mcu:
+  name: cortex-m4f@80MHz
+  freq_mhz: 80
+  cycles_per_mac: 1.5
+  active_mw: 12.0
+  sleep_uw: 20.0

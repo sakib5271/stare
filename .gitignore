@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.eggs/
+*.tflite
+*.npy
+*.npz
+data/raw/
+data/processed/
+experiments/runs/
+figures/
+.venv/
+.env
